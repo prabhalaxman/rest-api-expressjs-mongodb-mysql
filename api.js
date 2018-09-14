@@ -254,7 +254,21 @@ router.post('/login', function(req, res) {
     });
  });
 
-
+ // File input field name is simply 'file'
+ router.post('/file_upload', VerifyToken,upload.single('file'), function(req, res) {
+     var file = __dirname + '/' + req.file.filename;
+     fs.rename(req.file.path, file, function(err) {
+       if (err) {
+         console.log(err);
+         res.send(500);
+       } else {
+         res.json({
+           message: 'File uploaded successfully',
+           filename: req.file.filename
+         });
+       }
+     });
+   });
  
 
  module.exports = router;

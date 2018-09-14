@@ -6,6 +6,8 @@
 
 all the APIs are written in api.js
 
+open terminal and run the following
+
 # cd rest-api-expressjs-mongodb
 # nodeman index.js
 

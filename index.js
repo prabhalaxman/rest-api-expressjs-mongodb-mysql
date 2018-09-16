@@ -5,6 +5,10 @@ var app = express();
 var api = require('./api.js');
 
 app.use('/api', api);
+
+var mysql_api = require('./mysql_api.js');
+
+app.use('/api2', mysql_api);
 // app.use('/api', function(req, res, next){
 //     console.log("A request for things received at " + Date.now());
 //     next();
